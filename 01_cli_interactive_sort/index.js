@@ -4,7 +4,7 @@ const Arr = require("./arr-methods");
 const menu = () => {
     readLine.question('Hello. Enter 10 words or digits dividing them in spaces: ', (userInput) => {
         var choice = "";
-        const arr = userInput.split(' ');
+        const arr = userInput.trim().split(' ');
         const arrStr = Arr.GetArrStrings(arr);
         const arrNum = Arr.GetArrNumbers(arr);
         // console.log(arr);
