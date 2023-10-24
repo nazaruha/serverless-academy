@@ -27,10 +27,7 @@ class Arr {
 
     static SortLetterCountAscending = (arr) => arr.sort((a,b) => a.length - b.length);
 
-    static GetUniqueValues = (arr) => {
-        const set = new Set(arr);
-        return [...set];
-    }
+    static GetUniqueValues = (arr) => [... new Set(arr)];
 
     static SortNumbersAscending = (arr) => arr.sort((a,b) => a-b);
 
