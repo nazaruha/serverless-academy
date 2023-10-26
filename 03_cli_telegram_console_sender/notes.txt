@@ -1,0 +1,3 @@
+Hi. First of all you should start app.js file. 
+Then write a /start command in your Telegram.
+Then launch the index.js file to send messages or photos
