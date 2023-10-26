@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Nazarii",
+    "gender": "male",
+    "age": "21"
+  },
+  {
+    "name": "Katya",
+    "gender": "female",
+    "age": "23"
+  },
+  {
+    "name": "Oleg",
+    "gender": "male",
+    "age": "55"
+  },
+  {
+    "name": "Pasha",
+    "gender": "female",
+    "age": "23"
+  },
+  {
+    "name": "Nastya",
+    "gender": "female",
+    "age": "20"
+  },
+  {
+    "name": "Oleg",
+    "gender": "female",
+    "age": "20"
+  },
+  {
+    "name": "Oleg",
+    "gender": "male",
+    "age": "3"
+  }
+]
