@@ -35,22 +35,23 @@ const GetForecast = (interval, chatId) => {
     axios.get(weatherURL)
         .then((res) => {
             const data = res.data;
-            bot.sendMessage(chatId, "GET DATA SUCCESS", buttons.first_button);
+            const list = data.list;
+            var str = `Forecast ${interval} hours interval:\n`;
+            list.forEach(item => {
+                str += `
+                    ------
+                    Weather: ${item.weather[0].description}
+                    Min temperature: ${item.main.temp_min}
+                    Max temperature: ${item.main.temp_max}
+                    Humidity: ${item.main.humidity}
+                    Wind speed: ${item.wind.speed}
+                    ------
+                `
+            });
+            bot.sendMessage(chatId, str, buttons.first_button);
         })
         .cathc((err) => {
             bot.sendMessage(chatId, err.toString(), buttons.first_button);
         })
 }
-
-
-
-
-// axios.get(weatherURL)
-//     .then((res) => {
-//         const data = res.data;
-//         const list = data.list;
-//         const city = data.city;
-//         const weather = list[0].weather[0];
-//         console.log(weather.description)
-//     }).catch(err => console.log(err));
 
