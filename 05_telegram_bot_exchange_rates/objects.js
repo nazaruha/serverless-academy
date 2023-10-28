@@ -18,21 +18,31 @@ const weatherAPI = {
 }
 
 const buttons = {
-    first_button: {
+    choose_option_buttons: {
         reply_markup: {
             keyboard: [
-                ["Forecast in Rivne, Ukraine"],
+                ["Forecast in Rivne, Ukraine", "Exchange rate"],
             ],
             one_time_keyboard: true,
         },
     },
-    second_buttons: {
+    forecast_buttons: {
         reply_markup: {
             keyboard: [
                 ["At intervals of 3 hours", "At intervals of 6 hours"],
+                ["Previous menu"]
             ],
             one_time_keyboard: true,
         },
+    },
+    exchange_buttons: {
+        reply_markup: {
+            keyboard: [
+                ["USD", "EUR"],
+                ["Previous menu"]
+            ],
+            one_time_keyboard: true,
+        }
     }
 }
 

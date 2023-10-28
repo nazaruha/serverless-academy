@@ -5,9 +5,9 @@ const {weatherAPI, buttons} = require("./objects");
 const token = '6917976917:AAEgSNuMh-95G-459Ox7bEzxgAVazexF6mQ';
 const bot = new TelegramBot(token, { polling: true });
 
-bot.onText(/\/forecast/, (msg) => {
+bot.onText(/\/start/, (msg) => {
     const chatId = msg.chat.id;
-    bot.sendMessage(chatId, "Click the button", buttons.first_button);
+    bot.sendMessage(chatId, "Choose the option", buttons.choose_option_buttons);
 });
 
 bot.on('message', (msg) => {
@@ -16,7 +16,7 @@ bot.on('message', (msg) => {
 
     switch(message) {
         case "Forecast in Rivne, Ukraine": {
-            bot.sendMessage(chatId, "Choose the interval", buttons.second_buttons);
+            bot.sendMessage(chatId, "Choose the interval", buttons.forecast_buttons);
             break;
         }
         case "At intervals of 3 hours": {
@@ -25,6 +25,20 @@ bot.on('message', (msg) => {
         }
         case "At intervals of 6 hours": {
             GetForecast("6", chatId);
+            break;
+        }
+        case "Exchange rate": {
+            bot.sendMessage(chatId, "Choose currency exchange rate", buttons.exchange_buttons)
+            break;
+        }
+        case "USD": {
+            break;
+        }
+        case "EUR": {
+            break;
+        }
+        case "Previous menu": {
+            bot.sendMessage(chatId, "Choose the option", buttons.choose_option_buttons);
             break;
         }
     }
