@@ -17,6 +17,26 @@ const weatherAPI = {
     }
 }
 
+const buttons = {
+    first_button: {
+        reply_markup: {
+            keyboard: [
+                ["Forecast in Rivne, Ukraine"],
+            ],
+            one_time_keyboard: true,
+        },
+    },
+    second_buttons: {
+        reply_markup: {
+            keyboard: [
+                ["At intervals of 3 hours", "At intervals of 6 hours"],
+            ],
+            one_time_keyboard: true,
+        },
+    }
+}
+
 module.exports = {
-    weatherAPI
+    weatherAPI,
+    buttons
 };
