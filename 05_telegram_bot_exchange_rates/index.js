@@ -85,7 +85,10 @@ const GetExchangeRatePrivat = async (currency) => {
         const response = await axios.get(BanksAPI.privat);
         const data = response.data;
         const rateCurrency = data.find(x => x.ccy.includes(currency));
-        message += `BUY: ${rateCurrency.buy}\nSELL: ${rateCurrency.sale}\n\n`
+        if (currency == "USD")
+            message += `BUY: ${rateCurrency.buy} 💵\nSELL: ${rateCurrency.sale} 💵\n\n`
+        else if (currency == "EUR")
+            message += `BUY: ${rateCurrency.buy} 💶\nSELL: ${rateCurrency.sale} 💶\n\n`
         return message;
     }
     catch (err) {
@@ -101,7 +104,7 @@ const GetExchangeRateMono = async (currency) => {
 
         const rateUSD = data.find(x => x.currencyCodeA == 840 && x.currencyCodeB == 980);
         if (rateUSD !== null) {
-            MonoCacheMessages["USD"] = `BUY: ${rateUSD.rateBuy}\nSELL: ${rateUSD.rateSell}\n`;
+            MonoCacheMessages["USD"] = `BUY: ${rateUSD.rateBuy} 💵\nSELL: ${rateUSD.rateSell} 💵\n`;
             myCache.set("MonoUSD", MonoCacheMessages["USD"], 10000);
         } else {
             myCache.set("MonoUSD", "unknown", 10000);
@@ -109,7 +112,7 @@ const GetExchangeRateMono = async (currency) => {
         
         const rateEUR = data.find(x => x.currencyCodeA == 978 && x.currencyCodeB == 980);
         if (rateEUR !== null) {
-            MonoCacheMessages["EUR"] = `BUY: ${rateEUR.rateBuy}\nSELL: ${rateEUR.rateSell}\n`;
+            MonoCacheMessages["EUR"] = `BUY: ${rateEUR.rateBuy} 💶\nSELL: ${rateEUR.rateSell} 💶\n`;
             myCache.set("MonoEUR", MonoCacheMessages["EUR"], 10000);
         } else {
             myCache.set("MonoEUR", "unknown", 10000);
