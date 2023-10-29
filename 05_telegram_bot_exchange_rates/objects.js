@@ -17,6 +17,16 @@ const weatherAPI = {
     }
 }
 
+const BanksAPI = {
+    privat: "https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5",
+    mono: "https://api.monobank.ua/bank/currency"
+};
+
+const MonoCacheMessages = {
+    "USD": "",
+    "EUR": ""
+};
+
 const buttons = {
     choose_option_buttons: {
         reply_markup: {
@@ -48,5 +58,7 @@ const buttons = {
 
 module.exports = {
     weatherAPI,
+    BanksAPI,
+    MonoCacheMessages,
     buttons
 };
